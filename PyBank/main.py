@@ -1,4 +1,4 @@
-#The total number of months included in the dataset
+import csv
 total_months = 0
 
 
@@ -25,7 +25,14 @@ with open(file_path) as csvfile:
     print (f"CSV Header: {csv_header}")
     #read each row of data after the header
     for row in csvreader:
-        print(row)
+        #The total number of months included in the dataset
+        total_months = Total_months + 1
+     
+
+        #Print Results
+        print ("financial analysis")
+        print ("---------------------")
+        print (f"Total Months: {total_months}")
 #Result should look like
 #Financial Analysis
 #----------------------------
