@@ -21,7 +21,13 @@ with open(file_path) as csvfile:
         profit = float(row[1])
 
         #The net total amount of "Profit/Losses" over the entire period
+        if profit >0:
+            sum_profit = profit + int(row[1])
+        elif profit <0:
+            sum_loss = profit - sum_loss
+        total_profit_loss_amount = sum_profit + sum_loss
         #Calculate the changes in "Profit/Losses" over the entire period, then find the average of those changes
+        average_profit_loss = total_profit_loss_amount/total_months
         #The greatest increase in profits (date and amount) over the entire period 
         if (profit > greatest_increase ["amount"]):
              greatest_increase["date"] = date
